@@ -92,6 +92,8 @@
             New Shipment
           </button>
         </div>
+        <input type="text" id="searchShipment" class="form-control mb-3" placeholder="🔍 Search by PO Number">
+
         <table id="shipmentTable" class="table table-striped">
           <thead>
             <tr>
@@ -122,6 +124,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="../scripts/shipment.js"></script>
+  <script src="../scripts/tracking.js"></script>
   <script src="../scripts/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

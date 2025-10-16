@@ -226,6 +226,56 @@ async function fetchShipments() {
   });
 }
 
+// ----------- Search Shipment by PO Number -----------
+document
+  .getElementById("searchShipment")
+  ?.addEventListener("input", async (e) => {
+    const query = e.target.value.trim();
+
+    if (query === "") {
+      fetchShipments(); // reset list
+      return;
+    }
+
+    const res = await fetch(
+      `../api/shipment.php?action=search&po_number=${encodeURIComponent(query)}`
+    );
+    const result = await res.json();
+
+    const tbody = document.querySelector("#shipmentTable tbody");
+    tbody.innerHTML = "";
+
+    if (!result.data || result.data.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="9" class="text-center">No shipments found for "${query}".</td></tr>`;
+      return;
+    }
+
+    result.data.forEach((s) => {
+      tbody.innerHTML += `
+      <tr class="text-center align-middle">
+        <td>${s.po_number}</td>
+        <td>${s.origin}</td>
+        <td>${s.destination}</td>
+        <td>${s.cargo_info ?? ""}</td>
+        <td>${s.driver_name ?? ""}</td>
+        <td>${s.vehicle_number ?? ""}</td>
+        <td><span class="badge ${
+          s.status === "Ready"
+            ? "bg-info"
+            : s.status === "In Transit"
+            ? "bg-warning"
+            : "bg-success"
+        }">${s.status}</span></td>
+        <td><span class="badge ${
+          s.consolidated == 1 ? "bg-success" : "bg-danger"
+        }">${s.consolidated == 1 ? "Yes" : "No"}</span></td>
+        <td><button class="btn btn-sm btn-secondary" onclick="archiveShipment(${
+          s.id
+        })">Archive</button></td>
+      </tr>`;
+    });
+  });
+
 // Handle shipment form submission (modal)
 document
   .getElementById("shipmentForm")

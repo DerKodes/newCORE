@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", activateSidebar);
 //     data.forEach((ship) => {
 //       tbody.innerHTML += `
 //         <tr>
-//           <td>${ship.id}</td>
 //           <td>${ship.sender_name}</td>
 //           <td>${ship.receiver_name}</td>
 //           <td>${ship.address}</td>

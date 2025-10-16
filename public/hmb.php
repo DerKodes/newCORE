@@ -124,7 +124,6 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Populated dynamically by app.js -->
               </tbody>
             </table>
           </div>

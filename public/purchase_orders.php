@@ -49,35 +49,31 @@
 
     <!-- Page Content -->
 
-   
-    
-    <h2 class="mt-5">Shipments from Core 3</h2>
-<div class="table-section">
-  <table id="shipmentTable" class="table table-striped">
-    <thead>
-      <tr>
-        <th>PO ID</th>
-        <th>Sender</th>
-        <th>Receiver</th>
-        <th>Address</th>
-        <th>Weight</th>
-        <th>Package Info</th>
-        <th>Status</th>
-        <th>Created At</th>
-        <th>Action</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Filled by JS -->
-    </tbody>
-  </table>
-</div>
+    <h2 class="mt-5"></h2>
+    <div class="table-section">
+      <table id="shipmentTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Address</th>
+            <th>Weight</th>
+            <th>Package Info</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </div>
 
 
   </div>
 
- <!-- End Page Content -->
+  <!-- End Page Content -->
   <!-- JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
